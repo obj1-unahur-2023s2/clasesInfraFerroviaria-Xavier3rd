@@ -1,10 +1,13 @@
 class VagonDeCarga {
-	var property cargaMaximaIdeal
+	const property cargaMaximaIdeal
 	var property maderasSueltas
 	
-	method tieneBanio() = false
-	method cargaReal() = cargaMaximaIdeal - (400*maderasSueltas)
-	method pesoMaximo() = 1500 + self.cargaReal()
+	// Metodos polimorficos
+	method pesoMaximo() = 1500 + self.cargaMaxima()
 	method cantidadDePasajeros() = 0
+	method tieneBanio() = false
+	method cargaMaxima() = 0.max(cargaMaximaIdeal - (400*maderasSueltas))
 	method esVagonPopular() = self.cantidadDePasajeros() > 50
 }
+	
+	

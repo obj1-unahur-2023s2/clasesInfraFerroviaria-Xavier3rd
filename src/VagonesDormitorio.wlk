@@ -1,10 +1,11 @@
 class VagonDormitorio {
-	var property compartimentos
-	var property camasPorCompartimento
+	const property compartimientos
+	var property camasPorCompartimiento
 	
-	method cargaMaxima() = 1200
-	method tieneBanio() = true
-	method cantidadDePasajeros() = compartimentos * camasPorCompartimento
+	// Metodos polimorficos
+	method cantidadDePasajeros() = compartimientos * camasPorCompartimiento
 	method pesoMaximo() = 4000 + (80* self.cantidadDePasajeros()) + self.cargaMaxima()
+	method tieneBanio() = true
+	method cargaMaxima() = 1200
 	method esVagonPopular() = self.cantidadDePasajeros() > 50
 }
